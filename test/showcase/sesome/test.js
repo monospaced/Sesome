@@ -1,4 +1,6 @@
 (function () {
+	
+	Monocle.Controls.Magnifier.RESET_STYLESHEET = "";
 
   var bookData = {
     getComponents: function () {
@@ -56,7 +58,8 @@
       var bkTitle = bookData.getMetaData('title');
       var placeSaver = new Monocle.Controls.PlaceSaver(bkTitle);
       readerOptions.place = placeSaver.savedPlace();
-      readerOptions.panels = Monocle.Panels.Marginal;
+      readerOptions.panels = Monocle.Panels.IMode;
+			readerOptions.flipper = Monocle.Flippers.Instant;
 
       /* Initialize the reader */
       window.reader = Monocle.Reader(
@@ -81,20 +84,28 @@
 
           /* MAGNIFIER CONTROL */
           var magnifier = new Monocle.Controls.Magnifier(reader);
-          reader.addControl(magnifier, 'page');
+          reader.addControl(magnifier, 'standard');
+
+					// And the control object being in the variable named 'control'...
+					var bookTitle = {};
+					bookTitle.createControlElements = function () {
+						var cntr = document.createElement('div');
+            cntr.className = "bookTitle";
+            cntr.innerHTML = '<a class="bookBack" href="/Monocle/test/showcase/">↩</a> <b>' + reader.getBook().getMetaData('title') + '</b> <span class="meta">' + reader.getBook().getMetaData('creator') + '</span';
+						return cntr;
+					};
+					reader.addControl(bookTitle, 'standard');
 
 
           /* BOOK TITLE RUNNING HEAD */
-          var bookTitle = {}
-          bookTitle.contentsMenu = Monocle.Controls.Contents(reader);
-          reader.addControl(bookTitle.contentsMenu, 'popover', { hidden: true });
-          bookTitle.createControlElements = function () {
-            var cntr = document.createElement('div');
-            cntr.className = "bookTitle";
-            var runner = document.createElement('div');
-            runner.className = "runner";
-            runner.innerHTML = reader.getBook().getMetaData('title');
-            cntr.appendChild(runner);
+          var bookContents = {};
+          bookContents.contentsMenu = Monocle.Controls.Contents(reader);
+          reader.addControl(bookContents.contentsMenu, 'popover', { hidden: true });
+          bookContents.createControlElements = function () {
+            var cntr = document.createElement('a');
+            cntr.className = "bookContents";
+						cntr.setAttribute('href','#_');
+            cntr.innerHTML = "❐";
 
             Monocle.Events.listenForContact(
               cntr,
@@ -106,14 +117,14 @@
                   } else {
                     evt.returnValue = false;
                   }
-                  reader.showControl(bookTitle.contentsMenu);
+                  reader.showControl(bookContents.contentsMenu);
                 }
               }
             );
 
             return cntr;
           }
-          reader.addControl(bookTitle, 'page');
+          reader.addControl(bookContents, 'standard');
 
 
           /* CHAPTER TITLE RUNNING HEAD
@@ -170,10 +181,26 @@
             }
           ); */
 
-          reader.addPageStyles("body { " +
-            "color: #000;" +
-            "font: 15px/1.333 cambria, georgia, times, 'times new roman', serif ! important;" +
-          "}");
+          reader.addPageStyles(
+						"body {font:16px/1.75 georgia, serif ! important; text-align:justify; color:#000; background:#f2f2f2;}"+
+						"p {margin:0; padding:0;}" +
+						"p + p {text-indent:1em;}" +
+						"h1, h2, h3, h4, h5, h6 {font-weight:normal; text-align:center; text-shadow:1px 1px 0 #fff;}" +
+						"h1, h2 {margin:0 0 1.167em; line-height:1.167;}" +
+						"h1 {font-size:2.25em;}" +
+						"h2 {font-size:1.5em;}" +
+						"p + h1, p + h2 {margin:1.167em 0;}" +
+						"h3 {margin:0 0 1.333em; font-size:1.3125em; line-height:1.333;}" +
+						"p + h3 {margin:1.333em 0;}" +
+						"h4 {margin:0 0 1.556em; font-size:1.125em; line-height:1.556;}" +
+						"p + h4 {margin:1.556em 0;}" +
+						"h5, h6 {margin:0 0 1.175em; font-weight:bold; font-size:1em; line-height:1.75; text-shadow:none;}" +
+						"p + h5, p + h6 {margin:1.175em 0;}" +
+						"hr {text-align: center; width:50%; margin: 1.75em auto; padding: 2px 0 0; border:none; border-top:1px solid #666; border-bottom:1px solid #666;}" +
+						"::-webkit-selection {background:#bff252; text-shadow:none;}" +
+						"::-moz-selection {background:#bff252; text-shadow:none;}" +
+						"::selection {background:#bff252; text-shadow:none;}"
+					);
 
           /* Scrubber */
           var scrubber = new Monocle.Controls.Scrubber(reader);
