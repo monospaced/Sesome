@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta
       name="viewport"
@@ -41,6 +42,25 @@
   </head>
 
   <body>
+		<!--[if IE]>
+			<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+			<style>
+				.chromeFrameInstallDefaultStyle {
+					width: 100%; /* default is 800px */
+					border: 5px solid blue;
+				}
+			</style>
+			<div id="prompt">
+				Install Chrome Frame mutha lickas
+			</div>
+			<script>
+			window.attachEvent("onload", function() {
+				CFInstall.check({
+					mode: "inline", // the default
+					node: "prompt"});
+				});
+			</script>
+		<![endif]-->
     <div id="readerCntr">
       <div id="reader"></div>
     </div>
