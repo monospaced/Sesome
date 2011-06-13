@@ -44,20 +44,11 @@
   <body>
 		<!--[if IE]>
 			<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-			<style>
-				.chromeFrameInstallDefaultStyle {
-					width: 100%; /* default is 800px */
-					border: 5px solid blue;
-				}
-			</style>
-			<div id="prompt">
-				Install Chrome Frame mutha lickas
-			</div>
 			<script>
-			window.attachEvent("onload", function() {
-				CFInstall.check({
-					mode: "inline", // the default
-					node: "prompt"});
+				window.attachEvent("onload", function() {
+					CFInstall.check({
+						mode: "overlay"
+					});
 				});
 			</script>
 		<![endif]-->
