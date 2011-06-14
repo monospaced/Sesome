@@ -182,10 +182,10 @@
           ); */
 
           reader.addPageStyles(
-						"body {font-size:16px; line-height:1; font-family:georgia, serif; text-align: justify; color:#000; background:#f2f2f2;}"+
-						"p {margin:0; padding:0; line-height:1.75; -webkit-hyphens:auto; -moz-hyphens:auto; hyphens:auto;}" +
-						"p + p {text-indent:1em;}"  +
-						"h1, h2, h3, h4, h5, h6 {padding:0; font-weight:normal; text-align:center; text-shadow:1px 1px 0 #fff;}" +
+						"body {font-size:16px; line-height:1.75; font-family:georgia, serif; color:#000; background:#f2f2f2;}"+
+						"p {margin:0; padding:0; text-align:justify; -webkit-hyphens:auto; -moz-hyphens:auto; hyphens:auto;}" +
+						"p + p {text-indent:1em;}" +
+						"h1,h2,h3,h4,h5,h6 {padding:0; font-weight:normal; text-align:center; text-shadow:1px 1px 0 #fff;}" +
 						"h1 {font-size:2.25em;}" +
 						"h2 {font-size:1.5em;}" +
 						"h1, h2 {margin:0 0 1.167em; line-height:1.167;}" +
