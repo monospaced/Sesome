@@ -210,7 +210,7 @@ Monocle.Reader = function (node, bookData, options, onLoadCallback) {
       dom.find('sheaf', i).dom.setStyles(Monocle.Styles.sheaf);
       var cmpt = dom.find('component', i)
       cmpt.dom.setStyles(Monocle.Styles.component);
-      Monocle.Styles.applyRules(cmpt.contentDocument.body, Monocle.Styles.body);
+      Monocle.Styles.applyRules(cmpt.contentWindow.document.body, Monocle.Styles.body);
     }
     lockFrameWidths();
     dom.find('overlay').dom.setStyles(Monocle.Styles.overlay);
@@ -539,7 +539,7 @@ Monocle.Reader = function (node, bookData, options, onLoadCallback) {
       var sheetIndex = p.pageStylesheets.length - 1;
 
       for (var i = 0; i < p.flipper.pageCount; ++i) {
-        var doc = dom.find('component', i).contentDocument;
+        var doc = dom.find('component', i).contentWindow.document;
         addPageStylesheet(doc, sheetIndex);
       }
       return sheetIndex;
@@ -557,7 +557,7 @@ Monocle.Reader = function (node, bookData, options, onLoadCallback) {
         styleRules = styleRules.join("\n");
       }
       for (var i = 0; i < p.flipper.pageCount; ++i) {
-        var doc = dom.find('component', i).contentDocument;
+        var doc = dom.find('component', i).contentWindow.document;
         var styleTag = doc.getElementById('monStylesheet'+sheetIndex);
         if (!styleTag) {
           console.warn('No such stylesheet: ' + sheetIndex);
@@ -583,7 +583,7 @@ Monocle.Reader = function (node, bookData, options, onLoadCallback) {
     return changingStylesheet(function () {
       p.pageStylesheets[sheetIndex] = null;
       for (var i = 0; i < p.flipper.pageCount; ++i) {
-        var doc = dom.find('component', i).contentDocument;
+        var doc = dom.find('component', i).contentWindow.document;
         var styleTag = doc.getElementById('monStylesheet'+sheetIndex);
         styleTag.parentNode.removeChild(styleTag);
       }

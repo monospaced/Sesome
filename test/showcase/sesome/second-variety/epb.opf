@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="EPB-UUID" version="2.0">
+   <metadata xmlns:opf="http://www.idpf.org/2007/opf"
+             xmlns:dc="http://purl.org/dc/elements/1.1/">
+      <dc:title>Second Variety</dc:title>
+      <dc:creator opf:role="aut" opf:file-as="Dick, Philip Kindred">Philip Kindred Dick</dc:creator>
+      <dc:creator opf:role="ill" opf:file-as="Ebel, Alex">Alex Ebel</dc:creator>
+      <dc:date opf:event="original-publication">1953</dc:date>
+      <dc:publisher>epubBooks (www.epubbooks.com)</dc:publisher>
+      <dc:date opf:event="epub-publication">2010-07-27</dc:date>
+      <dc:subject>Science Fiction</dc:subject>
+      <dc:subject>Short Stories</dc:subject>
+      <dc:source>Project Gutenberg</dc:source>
+      <dc:rights>
+            Provided for free by epubBooks.com. Not for commercial use.
+            This EPUB eBook is released under a Creative Commons (BY-NC-ND/3.0) Licence.
+            Source text and images are in the Public Domain.
+      </dc:rights>
+      <dc:identifier id="EPB-UUID">urn:uuid:4B1E84FE-6C00-1014-83D5-DCBB2AF95C34</dc:identifier>
+      <dc:language>en-us</dc:language>
+   </metadata>
+   <manifest>
+      <!-- Content Documents -->
+      <item id="titlepage" href="title.xml" media-type="application/xhtml+xml"/>
+      <item id="epubbooksinfo" href="epubbooksinfo.xml" media-type="application/xhtml+xml"/>
+      <item id="chapter-001" href="chapter-001.xml" media-type="application/xhtml+xml"/>
+
+      <!-- CSS Style Sheets -->
+      <item id="title-page-css" href="css/titlepage.css" media-type="text/css"/>
+      <item id="main-css" href="css/book.css" media-type="text/css"/>
+
+      <!-- Images -->
+      <item id="epubbooks-logo" href="images/epubbooks-logo.png" media-type="image/png"/>
+      <item id="img-bookcover-jpeg" href="images/bookcover.jpg" media-type="image/jpeg"/>
+      <item id="img-illo1-left-jpeg" href="images/illo1-left.jpg" media-type="image/jpeg"/>
+      <item id="img-illo1-right-jpeg" href="images/illo1-right.jpg" media-type="image/jpeg"/>
+      <item id="img-illo2-jpeg" href="images/illo2.jpg" media-type="image/jpeg"/>
+
+      <!-- NCX -->
+      <item id="ncx" href="epb.ncx" media-type="application/x-dtbncx+xml"/>
+   </manifest>
+   <spine toc="ncx">
+      <itemref idref="titlepage" linear="yes"/>
+      <itemref idref="epubbooksinfo" linear="yes"/>
+      <itemref idref="chapter-001" linear="yes"/>
+   </spine>
+</package>

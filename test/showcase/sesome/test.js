@@ -5,34 +5,24 @@
   var bookData = {
     getComponents: function () {
       return [
-        'components/1.html',
-        'components/2.html',
-        'components/3.html'
+        "second-variety/titlepage.xhtml",
+	      "second-variety/epubbooksinfo.xhtml",
+	      "second-variety/chapter-001.xhtml"
       ];
     },
     getContents: function () {
       return [
         {
-          title: "The Signal Man",
-          src: "components/1.html"
+          title: "Title",
+          src: "second-variety/titlepage.xhtml"
         },
         {
-          title: "The Haunted House",
-          src: "components/2.html",
-          children: [
-            {
-              title: "Chapter I — The Mortals in the House",
-              src: "components/2.html#p2ch1"
-            },
-            {
-              title: "Chapter II — The Ghost in Master B.'s Room",
-              src: "components/2.html#p2ch2"
-            }
-          ]
+          title: "Title",
+          src: "second-variety/epubbooksinfo.xhtml"
         },
-        {
-          title: "The Trial for Murder",
-          src: "components/3.html"
+				{
+          title: "Title",
+          src: "second-variety/chapter-001.xhtml"
         }
       ]
     },
@@ -196,7 +186,7 @@
 						"p + h4 {margin:1.556em 0;}" +
 						"h5, h6 {margin:0 0 1.175em; font-weight:bold; font-size:1em; line-height:1.75; text-shadow:none;}" +
 						"p + h5, p + h6 {margin:1.175em 0;}" +
-						"hr {text-align: center; width:50%; margin: 1.75em auto; padding: 2px 0 0; border:none; border-top:1px solid #666; border-bottom:1px solid #666;}" +
+						"hr {width:50%; margin: 1.375em auto; padding: .0417em 0 0; border:none; border-top:.0833em solid #e2e2e2; border-bottom:.0833em solid #e2e2e2; text-align:center;}" +
 						"::-webkit-selection {background:#bff252; text-shadow:none;}" +
 						"::-moz-selection {background:#bff252; text-shadow:none;}" +
 						"::selection {background:#bff252; text-shadow:none;}"
