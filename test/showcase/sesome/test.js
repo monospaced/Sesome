@@ -186,7 +186,7 @@
 						"p + h4 {margin:1.556em 0;}" +
 						"h5, h6 {margin:0 0 1.175em; font-weight:bold; font-size:1em; line-height:1.75; text-shadow:none;}" +
 						"p + h5, p + h6 {margin:1.175em 0;}" +
-						"hr {width:50%; margin: 1.375em auto; padding: .0417em 0 0; border:none; border-top:.0833em solid #e2e2e2; border-bottom:.0833em solid #e2e2e2; text-align:center;}" +
+						"hr {width:50%; height:0; margin:1.6875em auto; padding:0; border:none; border-top:.1666em solid #e2e2e2; text-align:center;}" +
 						"::-webkit-selection {background:#bff252; text-shadow:none;}" +
 						"::-moz-selection {background:#bff252; text-shadow:none;}" +
 						"::selection {background:#bff252; text-shadow:none;}"
