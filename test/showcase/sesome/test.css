@@ -49,7 +49,7 @@ overflow: hidden; }
 
 body {
 color: #000;
-background: #f2f2f2;
+background: #fff;
 font: 11px/1.636 "Helvetica Neue", Arial, Helvetica, sans-serif; }
 
 /* 2.HEADINGS */
@@ -120,15 +120,13 @@ top: 3%;
 left: 6%;
 padding: 0 2% 0 0;
 cursor: default ! important;
-background: #f2f2f2;
-display: none ! important; }
+background: #fff; }
 
 .bookBack,
 .bookBack:visited {
 line-height: 1;
 font-size: 18px;
-color: #9d272d;
-display: none ! important; }
+color: #9d272d; }
 
 .bookContents {
 position: absolute;
@@ -137,7 +135,7 @@ right: 6%;
 margin: 0 1.5em 0 0;
 font-size: 18px;
 line-height: 1;
-background: #f2f2f2;
+background: #fff;
 display: none ! important; }
 
 /* magnifier */
@@ -148,7 +146,7 @@ right: 6%;
 padding: 0;
 font-family: georgia, serif;
 color: #548fa8;
-background: #f2f2f2;
+background: #fff;
 display: none ! important; }
 
 .monelem_box .monelem_controls_magnifier_A {
@@ -157,7 +155,7 @@ line-height: 1; }
 /* spinner */
 
 .monelem_box .monelem_controls_spinner_anim {
-background-color: #f2f2f2; }
+background-color: #fff; }
 
 /* toc */
 
@@ -166,7 +164,7 @@ border: 1px solid #e2e2e2;
 font: 14px/1.286 georgia, serif;
 text-shadow: 1px 1px 0 #fff;
 color: #548fa8;
-background: #f2f2f2; }
+background: #fff; }
 
 .monelem_box .monelem_controls_contents_chapter {
 border-bottom: 1px solid #e2e2e2; }

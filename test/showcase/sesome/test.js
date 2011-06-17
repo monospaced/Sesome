@@ -5,24 +5,19 @@
   var bookData = {
     getComponents: function () {
       return [
-        "second-variety/titlepage.xhtml",
-	      "second-variety/epubbooksinfo.xhtml",
+        "second-variety/cover.html",
 	      "second-variety/chapter-001.xhtml"
       ];
     },
     getContents: function () {
       return [
         {
-          title: "Title",
-          src: "second-variety/titlepage.xhtml"
+          title: "Cover",
+          src: "second-variety/cover.html"
         },
         {
-          title: "Title",
+          title: "Book",
           src: "second-variety/epubbooksinfo.xhtml"
-        },
-				{
-          title: "Title",
-          src: "second-variety/chapter-001.xhtml"
         }
       ]
     },
@@ -31,8 +26,8 @@
     },
     getMetaData: function(key) {
       return {
-        title: "Three Ghost Stories",
-        creator: "Charles Dickens"
+        title: "Second Variety",
+        creator: "Philip K Dick"
       }[key];
     }
   }
@@ -81,7 +76,7 @@
 					bookTitle.createControlElements = function () {
 						var cntr = document.createElement('div');
             cntr.className = "bookTitle";
-            cntr.innerHTML = '<a class="bookBack" href="/Monocle/test/showcase/">↩</a> <b>' + reader.getBook().getMetaData('title') + '</b> <span class="meta">' + reader.getBook().getMetaData('creator') + '</span';
+            cntr.innerHTML = '<a class="bookBack" href="http://sesome.profitfromplay.com/_templates/book/">↩</a> <b>' + reader.getBook().getMetaData('title') + '</b> <span class="meta">' + reader.getBook().getMetaData('creator') + '</span';
 						return cntr;
 					};
 					reader.addControl(bookTitle, 'standard');
@@ -172,10 +167,10 @@
           ); */
 
           reader.addPageStyles(
-						"body {font-size:16px; line-height:1.75; font-family:georgia, serif; color:#000; background:#f2f2f2;}"+
+						"body {font-size:16px; line-height:1.75; font-family:georgia, serif; color:#000; background:#fff;}"+
 						"p {margin:0; padding:0; text-align:justify; -webkit-hyphens:auto; -moz-hyphens:auto; hyphens:auto;}" +
 						"p + p {text-indent:1em;}" +
-						"h1,h2,h3,h4,h5,h6 {padding:0; font-weight:normal; text-align:center; text-shadow:1px 1px 0 #fff;}" +
+						"h1,h2,h3,h4,h5,h6 {padding:0; font-weight:normal; text-align:center;}" +
 						"h1 {font-size:2.25em;}" +
 						"h2 {font-size:1.5em;}" +
 						"h1, h2 {margin:0 0 1.167em; line-height:1.167;}" +
@@ -186,6 +181,7 @@
 						"p + h4 {margin:1.556em 0;}" +
 						"h5, h6 {margin:0 0 1.175em; font-weight:bold; font-size:1em; line-height:1.75; text-shadow:none;}" +
 						"p + h5, p + h6 {margin:1.175em 0;}" +
+						"img {margin: 0;}" +
 						"hr {width:50%; height:0; margin:1.6875em auto; padding:0; border:none; border-top:.1666em solid #e2e2e2; text-align:center;}" +
 						"::-webkit-selection {background:#bff252; text-shadow:none;}" +
 						"::-moz-selection {background:#bff252; text-shadow:none;}" +
