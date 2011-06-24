@@ -5,19 +5,14 @@
   var bookData = {
     getComponents: function () {
       return [
-        "second-variety/cover.html",
 	      "second-variety/chapter-001.xhtml"
       ];
     },
     getContents: function () {
       return [
         {
-          title: "Cover",
-          src: "second-variety/cover.html"
-        },
-        {
           title: "Book",
-          src: "second-variety/epubbooksinfo.xhtml"
+          src: "second-variety/chapter-001.xhtml"
         }
       ]
     },
@@ -52,6 +47,7 @@
         bookData,
         readerOptions,
         function(reader) {
+					
           reader.addControl(placeSaver, 'invisible');
 
           /* SPINNER */
@@ -67,7 +63,7 @@
             function () { window.reader.resized() }
           );
 
-          /* MAGNIFIER CONTROL */
+          /* MAGNIFIER CONTROL
           var magnifier = new Monocle.Controls.Magnifier(reader);
           reader.addControl(magnifier, 'standard');
 
@@ -79,10 +75,10 @@
             cntr.innerHTML = '<a class="bookBack" href="http://sesome.profitfromplay.com/_templates/book/">↩</a> <b>' + reader.getBook().getMetaData('title') + '</b> <span class="meta">' + reader.getBook().getMetaData('creator') + '</span';
 						return cntr;
 					};
-					reader.addControl(bookTitle, 'standard');
+					reader.addControl(bookTitle, 'standard'); */
 
 
-          /* BOOK TITLE RUNNING HEAD */
+          /* BOOK TITLE RUNNING HEAD 
           var bookContents = {};
           bookContents.contentsMenu = Monocle.Controls.Contents(reader);
           reader.addControl(bookContents.contentsMenu, 'popover', { hidden: true });
@@ -109,7 +105,7 @@
 
             return cntr;
           }
-          reader.addControl(bookContents, 'standard');
+          reader.addControl(bookContents, 'standard');*/
 
 
           /* CHAPTER TITLE RUNNING HEAD
@@ -182,30 +178,20 @@
 						"h5, h6 {margin:0 0 1.175em; font-weight:bold; font-size:1em; line-height:1.75; text-shadow:none;}" +
 						"p + h5, p + h6 {margin:1.175em 0;}" +
 						"img {margin: 0;}" +
-						"hr {width:50%; height:0; margin:1.6875em auto; padding:0; border:none; border-top:.1666em solid #e2e2e2; text-align:center;}" +
+						"hr {width:50%; height:1.75em; margin:0; padding:0; border:none; background:#fff;}" +
 						"::-webkit-selection {background:#bff252; text-shadow:none;}" +
 						"::-moz-selection {background:#bff252; text-shadow:none;}" +
 						"::selection {background:#bff252; text-shadow:none;}"
 					);
 
-          /* Scrubber */
+          /* Scrubber 
           var scrubber = new Monocle.Controls.Scrubber(reader);
           reader.addControl(scrubber, 'standard');
           var showFn = function (evt) {
             evt.stopPropagation();
             reader.showControl(scrubber);
             scrubber.updateNeedles();
-          }
-          for (var i = 0; i < chapterTitle.runners.length; ++i) {
-            Monocle.Events.listenForContact(
-              chapterTitle.runners[i].parentNode,
-              { start: showFn }
-            );
-            Monocle.Events.listenForContact(
-              pageNumber.runners[i].parentNode,
-              { start: showFn }
-            );
-          }
+          }*/
         }
       );
     }
