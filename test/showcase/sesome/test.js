@@ -38,7 +38,7 @@
       var bkTitle = bookData.getMetaData('title');
       var placeSaver = new Monocle.Controls.PlaceSaver(bkTitle);
       readerOptions.place = placeSaver.savedPlace();
-      readerOptions.panels = Monocle.Panels.IMode;
+      readerOptions.panels = Monocle.Panels.TwoPane;
 			readerOptions.flipper = Monocle.Flippers.Instant;
 
       /* Initialize the reader */
